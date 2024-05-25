@@ -36,3 +36,96 @@
     transform: rotate(360deg);
   }
 }
+
+.fullPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.menuBar {
+  flex: 0 0 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lenntechLogo {
+  padding-left: 20px;
+}
+
+.appPage {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bottomPage {
+  flex: 0 0 10%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.homeButton {
+  font-weight: bolder;
+  font-size: 200%;
+  color: black;
+  text-decoration: none;
+  padding: 1% 1%;
+  /*padding: 10px 20px;*/
+  border: 1px solid black;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.inputBox {
+  width: 70%;
+  height: 200px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  line-height: 1.2;
+  resize: none;
+  margin-top: 8px;
+}
+
+.textAndInputProducts {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputProducts {
+  width: 10%;
+  margin-top: 8px;
+  margin-left: 8px;
+  text-align: center;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitButton {
+  margin-top: 8px;
+}
+
+.bottomImages {
+  width: 80%;
+  height: 40%;
+}
