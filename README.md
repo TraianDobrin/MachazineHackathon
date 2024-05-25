@@ -1,1 +1,1 @@
-# MachazineHackathon
+# SpingHackathon
