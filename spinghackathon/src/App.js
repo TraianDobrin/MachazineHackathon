@@ -29,6 +29,8 @@ function App() {
     }
 
     const handleRefresh = (event) => {
+        setInputText("");
+        setNumberOfProducts(1);
         setShowInitialOutput(true);
     }
 
@@ -66,11 +68,16 @@ function App() {
                   { showInitialOutput ?
                       (
                           <>
-                            <div>The best products will appear here once you click "Submit request".</div>
-                            <div>For better results, we recommend to request at least 3 products.</div>
+                              <div>The best products will appear here once you click "Submit request".</div>
+                              <div>For better results, we recommend to request at least 3 products.</div>
                           </>
                       ) : (
-                          <div>muie</div>
+                          <>
+                              <div>muie</div>
+                              <button className="submitButton" onClick={handleRefresh}>
+                                  Refresh search
+                              </button>
+                          </>
                       )
                   }
               </div>
