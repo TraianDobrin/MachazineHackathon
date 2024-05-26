@@ -4,6 +4,7 @@ import spingLogo from './spingLogo.png';
 import './App.css';
 import { useState } from "react";
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     const [inputText, setInputText] = useState("");
@@ -68,14 +69,17 @@ function App() {
                             className="inputProducts"
                         />
                     </div>
-                    <button className="submitButton" onClick={handleSubmit}>
-                        Submit request
+                    <button
+                        className="btn btn-primary mt-2"
+                        onClick={handleSubmit}
+                    >
+                        Send request
                     </button>
                 </div>
                 <div className="rightColumn">
                     {showInitialOutput ? (
                         <>
-                            <div>The best products will appear here once you click "Submit request".</div>
+                            <div>The best products will appear here once you click "Send request".</div>
                             <div>For better results, we recommend to request at least 3 products.</div>
                         </>
                     ) : (
@@ -85,7 +89,7 @@ function App() {
                                     <p>Path: {result.path}</p>
                                 </div>
                             ))}
-                            <button className="submitButton" onClick={handleRefresh}>
+                            <button className="btn btn-secondary mt-2" onClick={handleRefresh}>
                                 Refresh search
                             </button>
                         </>
