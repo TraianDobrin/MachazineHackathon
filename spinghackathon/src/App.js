@@ -47,67 +47,71 @@ function App() {
     return (
         <main className="fullPage">
             <title>Home Page</title>
-            <div className="menuBar">
-                <h1>Welcome to</h1>
-                <img src={lenntechLogo} alt="Lenntech logo" className="lenntechLogo" />
-            </div>
-            <div className="appPage">
-                <div className="leftColumn">
-                    <div>Please add your request below:</div>
-                    <textarea
-                        placeholder="Input your request here..."
-                        className="inputBox"
-                        value={inputText}
-                        onChange={handleInputChange}
-                    />
-                    <div className="textAndInputProducts">
-                        Number of desired products:
-                        <input
-                            type="number"
-                            value={numberOfProducts}
-                            onChange={handleNumberOfProductChange}
-                            className="inputProducts"
+            <div className="leftSide"/>
+            <div className="mainPage">
+                <div className="menuBar">
+                    <h1>Welcome to</h1>
+                    <img src={lenntechLogo} alt="Lenntech logo" className="lenntechLogo" />
+                </div>
+                <div className="appPage">
+                    <div className="leftColumn">
+                        <div>Please add your request below:</div>
+                        <textarea
+                            placeholder="Input your request here..."
+                            className="inputBox"
+                            value={inputText}
+                            onChange={handleInputChange}
                         />
+                        <div className="textAndInputProducts">
+                            Number of desired products:
+                            <input
+                                type="number"
+                                value={numberOfProducts}
+                                onChange={handleNumberOfProductChange}
+                                className="inputProducts"
+                            />
+                        </div>
+                        <button
+                            className="btn btn-primary mt-2"
+                            onClick={handleSubmit}
+                        >
+                            Send request
+                        </button>
                     </div>
-                    <button
-                        className="btn btn-primary mt-2"
-                        onClick={handleSubmit}
-                    >
-                        Send request
-                    </button>
+                    <div className="rightColumn">
+                        {showInitialOutput ? (
+                            <>
+                                <div>The best products will appear here once you click "Send request".</div>
+                                <div>For better results, we recommend to request at least 3 products.</div>
+                            </>
+                        ) : (
+                            <>
+                                {results.map((result, index) => (
+                                    <div key={index}>
+                                        <p>Path: {result.path}</p>
+                                    </div>
+                                ))}
+                                <button className="btn btn-secondary mt-2" onClick={handleRefresh}>
+                                    Refresh search
+                                </button>
+                            </>
+                        )}
+                    </div>
                 </div>
-                <div className="rightColumn">
-                    {showInitialOutput ? (
-                        <>
-                            <div>The best products will appear here once you click "Send request".</div>
-                            <div>For better results, we recommend to request at least 3 products.</div>
-                        </>
-                    ) : (
-                        <>
-                            {results.map((result, index) => (
-                                <div key={index}>
-                                    <p>Path: {result.path}</p>
-                                </div>
-                            ))}
-                            <button className="btn btn-secondary mt-2" onClick={handleRefresh}>
-                                Refresh search
-                            </button>
-                        </>
-                    )}
+                <div className="bottomPage">
+                    <div>Solution developed by:</div>
+                    <a href="https://www.lenntech.com/">
+                        <img src={lenntechLogo} alt="Lenntech logo" className="bottomImages" />
+                    </a>
+                    <a href="https://polarixdata.com/en/">
+                        <img src={polarixLogo} alt="Polarix logo" className="bottomImages" />
+                    </a>
+                    <a href="https://sping.nl/">
+                        <img src={spingLogo} alt="Sping logo" className="bottomImages" />
+                    </a>
                 </div>
             </div>
-            <div className="bottomPage">
-                <div>Solution developed by:</div>
-                <a href="https://www.lenntech.com/">
-                    <img src={lenntechLogo} alt="Lenntech logo" className="bottomImages" />
-                </a>
-                <a href="https://polarixdata.com/en/">
-                    <img src={polarixLogo} alt="Polarix logo" className="bottomImages" />
-                </a>
-                <a href="https://sping.nl/">
-                    <img src={spingLogo} alt="Sping logo" className="bottomImages" />
-                </a>
-            </div>
+            <div className="rightSide"/>
         </main>
     );
 }
