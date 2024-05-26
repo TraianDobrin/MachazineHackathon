@@ -61,7 +61,7 @@ def traverse_directory(directory):
 directory = r'C:\Users\Traian\Downloads\lenntech-selection-suez\lenntech-suez\products'
 
 arr=traverse_directory(directory)
-csv_file_path = "products.csv"
+csv_file_path = "productssuez.csv"
 
 # Write the array to a CSV file
 with open(csv_file_path, 'w', newline='') as csvfile:
