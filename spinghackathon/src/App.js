@@ -82,12 +82,14 @@ function App() {
                             </>
                         ) : (
                             <>
-                                {results.map((result, index) => (
-                                    <div key={index}>
-                                        <p>Path: {result.path}</p>
-                                    </div>
-                                ))}
-                                <button className="btn btn-secondary mt-2" onClick={handleRefresh}>
+                                <div className="resultsContainer">
+                                    {results.map((result, index) => (
+                                        <div key={index}>
+                                            <p>Path: {result.path}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                                <button className="homeButton" onClick={handleRefresh}>
                                     Refresh search
                                 </button>
                             </>
