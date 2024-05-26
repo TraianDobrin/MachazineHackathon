@@ -36,10 +36,12 @@ def search_specifications(query, data, model):
 specifications = "Need a pleated filter with polyethersulfone membrane that can handle temperatures of up to 75 degrees celsius. Diameter should be 2.75 inch. Should contain a gasket adapter."
 matching_docs = search_specifications(specifications, data, model)
 
-# Print results
-if matching_docs:  # Check if there are matching documents
-    max_similarity, max_path, max_description = max(matching_docs, key=lambda x: x[0])  # Get the tuple with maximum similarity
-    print(f"Path: {max_path}\nDescription: {max_description}\nSimilarity: {max_similarity}\n")
-else:
-    print("No matching documents found.")  # Print a message if no matching documents were found
+input_nr = input("How many results do you want to see? ")
+nr_results = int(input_nr)
+if matching_docs:
+    for i in range(nr_results):
+        print(f"Path: {matching_docs[i][1]}")
+        print(f"Description: {matching_docs[i][2]}")
+        print(f"Similarity: {matching_docs[i][0]}")
+        print("\n")
 
