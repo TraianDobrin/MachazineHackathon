@@ -145,6 +145,12 @@
 
 .submitButton {
   margin-top: 8px;
+  height: 7%;
+  width: 20%;
+  background: #8bbdf1;
+  color: black;
+  border-radius: 3px;
+  font-size: 100%;
 }
 
 .bottomImages {

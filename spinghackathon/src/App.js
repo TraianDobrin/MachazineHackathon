@@ -4,7 +4,6 @@ import spingLogo from './spingLogo.png';
 import './App.css';
 import { useState } from "react";
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     const [inputText, setInputText] = useState("");
@@ -71,11 +70,8 @@ function App() {
                                 className="inputProducts"
                             />
                         </div>
-                        <button
-                            className="btn btn-primary mt-2"
-                            onClick={handleSubmit}
-                        >
-                            Send request
+                        <button className="submitButton" onClick={handleSubmit}>
+                            Submit request
                         </button>
                     </div>
                     <div className="rightColumn">
